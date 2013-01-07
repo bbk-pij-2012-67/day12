@@ -1,0 +1,7 @@
+//doubly-linked list
+public interface LinkedList<T>{
+	
+	void addPatient(T newNode);
+	
+	boolean delete(T Node);
+}
