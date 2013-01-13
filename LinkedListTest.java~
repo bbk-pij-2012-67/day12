@@ -19,23 +19,5 @@ public class LinkedListTest{
 		assertTrue(list.delete("four"));
 		assertTrue(list.delete("five"));
 		assertTrue(list.delete("six"));
-	
-		LinkedList<Integer> list2 = new DBLinkedList<Integer>();
-		list2.add(1);
-		list2.add(2);
-		list2.add(3);
-		list2.add(4);
-		list2.add(5);
-		list2.add(6);
-		
-		assertTrue(list2.delete(1));
-		assertTrue(list2.delete(2));
-		assertTrue(list2.delete(3));
-		assertTrue(list2.delete(4));
-		assertTrue(list2.delete(5));
-		assertTrue(list2.delete(6));
-	
 	}
-	
-	
 }

@@ -1,27 +1,32 @@
 public class DBLinkedList<T> implements LinkedList<T>{
 	
-	private T nextNode;
-	private T previousNode;
+	private T value;
+	private DBLinkedList<T> nextNode;
+	private DBLinkedList<T> previousNode;
 	
-	public void add(T newNode){
+	public void add(T value){
 		if(this.nextNode == null){
+			DBLinkedList<T> newNode = new DBLinkedList<T>();
+			newNode.value = value;
 			this.nextNode = newNode;
 			newNode.previousNode = this;
 		}else{
-			this.nextNode.add(newNode);
+			this.nextNode.add(value);
 		}
 	}
 	
-	public boolean delete(T node){
+	public boolean delete(T value){
 		if(this.nextNode == null){
 			return false;//not found
-		}else if(this.nextNode.toString().equals(node.toString())){
+		}else if(this.nextNode.value.equals(value)){
 			//found
 			this.nextNode = nextNode.nextNode;
-			this.nextNode.previousNode = this;
+			if (this.nextNode != null){
+				this.nextNode.previousNode = this;
+			}
 			return true;
 		}else{
-			return this.nextNode.delete(node);
+			return this.nextNode.delete(value);
 		}
 	}
 }
